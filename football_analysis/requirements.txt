@@ -1,0 +1,7 @@
+numpy==2.2.6
+opencv_python==4.10.0.84
+opencv_python_headless==4.10.0.84
+pandas==2.2.3
+scikit_learn==1.6.1
+supervision==0.25.1
+ultralytics==8.3.138
