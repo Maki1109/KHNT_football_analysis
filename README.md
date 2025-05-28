@@ -55,8 +55,6 @@ http://localhost:3000
 
 ### 📥 Sample Video
 
-Upload the sample football video from the following link when prompted:
-
-[Download Match Video (Google Drive)](https://drive.google.com/file/d/10PtDupMD493Gt2BavwW8Rp3ZNbdsCLKL/view?usp=sharing)
+[Download Sample Match Video (Google Drive)](https://drive.google.com/file/d/10PtDupMD493Gt2BavwW8Rp3ZNbdsCLKL/view?usp=sharing)
 
 ---
