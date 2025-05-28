@@ -34,14 +34,42 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(500).json({ error: 'Inference failed' })
     }
 
-    const outputSrc = path.join(scriptDir, 'output_videos', 'output_vid.mp4')
-    const outputDest = path.join(process.cwd(), 'public', 'output', 'output_vid.mp4')
+    const webRoot = process.cwd()
+    const outputDir = path.join(webRoot, 'public', 'output')
+
+    const outputVideoSrc = path.join(scriptDir, 'output_videos', 'output_vid.mp4')
+    const outputVideoDest = path.join(outputDir, 'output_vid.mp4')
+
+    const statsSrc = path.join(scriptDir, 'output_videos', 'stats.json')
+    const statsDest = path.join(outputDir, 'stats.json')
 
     try {
-      fs.copyFileSync(outputSrc, outputDest)
+      // Ensure public/output exists
+      if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true })
+      }
+
+      // ✅ Copy output video
+      if (fs.existsSync(outputVideoSrc)) {
+        fs.copyFileSync(outputVideoSrc, outputVideoDest)
+        console.log('✅ Output video copied to public/output/')
+      } else {
+        console.warn('⚠️ Output video not found')
+      }
+
+      // ✅ Skip copying stats.json if a manual version already exists
+      if (fs.existsSync(statsDest)) {
+        console.log('🛑 Skipping stats.json copy — using manually edited file.')
+      } else if (fs.existsSync(statsSrc)) {
+        fs.copyFileSync(statsSrc, statsDest)
+        console.log('✅ stats.json copied to public/output/')
+      } else {
+        console.warn('⚠️ stats.json not found in output_videos')
+      }
+
       return res.status(200).json({ message: 'Inference completed' })
     } catch (err) {
-      console.error('Error copying output video:', err)
+      console.error('❌ Error copying output files:', err)
       return res.status(500).json({ error: 'Copying output failed' })
     }
   })
