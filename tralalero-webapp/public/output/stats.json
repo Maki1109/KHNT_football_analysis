@@ -1,0 +1,48 @@
+{
+  "team1": {
+    "name": "Man united",
+    "ballPossession": 73.33,
+    "goals": 0,
+    "totalShots": 0,
+    "passes": {
+      "totalPasses": 40,
+      "passAccuracy": 90.4,
+      "crosses": 14,
+      "longPasses": 15,
+      "backPasses": 9
+    },
+    "players": [
+      {
+        "name": "Player 1",
+        "position": "N/A",
+        "longestDistance": 79.3,
+        "avgDistance": 61.3,
+        "highestSpeed": 28.1,
+        "avgSpeed": 18.9
+      }
+    ]
+  },
+  "team2": {
+    "name": "Man city",
+    "ballPossession": 26.67,
+    "goals": 0,
+    "totalShots": 0,
+    "passes": {
+      "totalPasses": 12,
+      "passAccuracy": 92.2,
+      "crosses": 3,
+      "longPasses": 5,
+      "backPasses": 1
+    },
+    "players": [
+      {
+        "name": "Player 14",
+        "position": "N/A",
+        "longestDistance": 77.2,
+        "avgDistance": 57.8,
+        "highestSpeed": 26.4,
+        "avgSpeed": 17.5
+      }
+    ]
+  }
+}
