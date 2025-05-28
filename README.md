@@ -35,7 +35,11 @@ npm install --legacy-peer-deps
 npm install formidable --legacy-peer-deps
 ```
 
-### 4. Start the Web App
+### 4. Create a folder named "input_videos" in football_analysis folder
+
+This folder will contain the football video 
+
+### 5. Start the Web App
 
 ```bash
 npm run dev
